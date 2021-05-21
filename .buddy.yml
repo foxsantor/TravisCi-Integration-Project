@@ -1,8 +1,0 @@
-- pipeline: "StageBuddy"
-  on: "EVENT"
-  events:
-    - type: "PUSH"
-      refs:
-        - "refs/heads/travis"
-  priority: "NORMAL"
-  fail_on_prepare_env_warning: true
