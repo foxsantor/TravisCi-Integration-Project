@@ -7,7 +7,7 @@
   priority: "NORMAL"
   fail_on_prepare_env_warning: true
   actions:
-- action: "Execute: mvn clean install"
+  - action: "Execute: mvn clean install"
     type: "BUILD"
     working_directory: "/buddy/testtravisci"
     docker_image_name: "adoptopenjdk/maven-openjdk11"
