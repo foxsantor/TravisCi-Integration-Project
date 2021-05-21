@@ -18,9 +18,10 @@ public static List<TestEntity> testEntityList;
         testEntityList = new ArrayList<>();
     }
 
-    public void addNewEntry(String entry1, int entry2){
+    public TestEntity addNewEntry(String entry1, int entry2){
     TestEntity entity = new TestEntity(entry2,entry1);
     testEntityList.add(entity);
+    return  entity;
 }
 
 
