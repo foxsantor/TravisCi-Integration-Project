@@ -23,9 +23,9 @@ public class RestController {
 }
 
 @PostMapping(path="/addTest/{number}/{string}",produces="application/json")
-    public @ResponseBody void addTest(@PathVariable int number, @PathVariable String string)
+    public @ResponseBody TestEntity addTest(@PathVariable int number, @PathVariable String string)
 {
-    serviceHandler.addNewEntry(string,number);
+    return serviceHandler.addNewEntry(string,number);
 
 }
 
