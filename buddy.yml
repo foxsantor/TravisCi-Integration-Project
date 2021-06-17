@@ -1,0 +1,21 @@
+- pipeline: "StageBuddy"
+  on: "EVENT"
+  events:
+    - type: "PUSH"
+      refs:
+        - "refs/heads/travis"
+  priority: "NORMAL"
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Execute: mvn clean install"
+    type: "BUILD"
+    working_directory: "/buddy/testtravisci"
+    docker_image_name: "adoptopenjdk/maven-openjdk11"
+    docker_image_tag: "latest"
+    execute_commands:
+      - "mvn clean install"
+    cached_dirs:
+      - "/root/.m2/repository"
+    volume_mappings:
+      - "/:/buddy/testtravisci"
+    shell: "BASH"
